@@ -1,11 +1,12 @@
 #include <stdio.h>
 int hapf(int value);
 
-void main()
+int main()
 {
 	printf("1부터 10까지의 합은 %d\n", hapf(10)); //더하기 함수 호출 후 value에 10넣기
 	printf("1부터 100까지의 합은 %d\n", hapf(100)); //더하기 함수 호출 value에 100넣기
 	printf("1부터 1000까지의 합은 %d\n", hapf(1000)); //더하기 함수 호출 value에 1000넣기
+	return 0;
 }
 int hapf(int value) // 더하기 함수 만들기
 {
