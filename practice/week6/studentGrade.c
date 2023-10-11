@@ -20,8 +20,8 @@ void classifyStudents(int scores[], char targetGrade) { //성적 분류하는 함수 생�
 		else { //scores[i]배열에 점수가 위에 조건들을 다 충족 못할때
 			grade = 'F'; //등급은 F
 		}
-		if (targetGrade == grade) { //
-			printf("%d 학생은 %c 점수를 받았습니다.", i + 1, targetGrade);
+		if (targetGrade == grade) { //타겟 등급과 등급이 일치할때
+			printf("%d 학생은 %c 점수를 받았습니다.", i + 1, targetGrade); // 점수와 등급 출력
 		}
 	}
 }
@@ -29,17 +29,17 @@ void classifyStudents(int scores[], char targetGrade) { //성적 분류하는 함수 생�
 int main() {
 	int scores[STUDENTS];
 
-	for (int i = 0; i < STUDENTS; i++) {
-		printf("학생 %d의 성적을 입력하세요: ", i + 1);
-		scanf_s("%d", &scores[i]);
+	for (int i = 0; i < STUDENTS; i++) { //i가 STUDENTS보다 작을 때 까지 반복
+		printf("학생 %d의 성적을 입력하세요: ", i + 1); //1부터 입력문구 출력
+		scanf_s("%d", &scores[i]); //학생의 성적 입력받기
 	}
 	char ch = getchar(); //엔터를 지우기 위해 버퍼를 날리는 명령어
 
-	char target;
-	printf("특정 점수 (A, B, C, D, F)를 입력하시오:");
-	scanf_s("%c", &target, 1);
+	char target; //문자열
+	printf("특정 점수 (A, B, C, D, F)를 입력하시오:"); //특정점수 입력문구 출력
+	scanf_s("%c", &target, 1); //특정 점수 입력받기
 
-	classifyStudents(scores, target);
+	classifyStudents(scores, target); //함수 호출
 
 	return 0;
 }
