@@ -42,6 +42,18 @@ double averageScores(int scores[]) { //평균 함수 만들기
 	return average;
 }
 
+void printRanks(int scores[]) { //순위 정하는 함수 생성
+	int ranks[STUDENTS];
+	for (int i = 0; i < STUDENTS; i++) {
+		ranks[i] = 1; //초기 순위를 1로 설정
+		for (int j = 0; j < STUDENTS; j++) { //비교분 만들기
+			if (scores[j] > scores[i]) { 
+				ranks[i]++; //i보다 j가 크면 랭크 올라가기 i랭크 올라감
+			}
+		}
+		printf("%d 학생의 순위는 %d입니다. \n", i, ranks[i]); //학생 순위 나타내는 문구 출력
+	}
+}
 int main() {
 	int scores[STUDENTS];
 
@@ -59,6 +71,8 @@ int main() {
 	int sum = sumScores(scores); //sum에 함수 호출
 	double average = averageScores(scores); //average에 averageScores함수 호출
 	printf("학생들의 점수의 총 합은 %d 이고, 평균 값은 %lf입니다.\n", sum, average); //총합과 평균 출력
+
+	printRanks(scores); //함수 호출
 
 	return 0;
 }
